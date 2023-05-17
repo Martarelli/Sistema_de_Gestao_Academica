@@ -3,19 +3,22 @@
 body {
 	font-family: Ubuntu, sans-serif !important; 
 	margin: 0 auto;
-	padding: 0;
-	background-image: url('https://consumidormoderno.com.br/wp-content/uploads/2021/07/shutterstock_134102588-1.jpg');
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-color: #c3c3c3;
+	padding: 0px;
 	height: 100vh;
-}
- 
-.container {
-	padding-top: 50px;
+	
 }
 
-  
+.img-background{
+	background-image: url('https://auditoriacidada.org.br/wp-content/uploads/2018/03/livros-1280x575.jpg');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.card {
+	border: none;
+}
+.card-body {
+	background-image: linear-gradient(-45deg, #b1b1b1 0%, #b7b7b7 35%, #e5e5e5 100%) !important;
+}
 
 
   
