@@ -40,9 +40,9 @@
     </ul>
     <hr>
     <div class="dropdown">
-      <a href="#" class="d-flex align-items-center text-white text-decoration-none">
+      <a href="logout.php" class="d-flex align-items-center text-white text-decoration-none">
       <i class="fa-solid fa-circle-user p-2"></i>
-        <strong>USUÁRIO</strong>
+        <?php echo "<strong>".strtoupper($_SESSION['username'])."</strong>" ?>
       </a>
     </div>
   </div>
