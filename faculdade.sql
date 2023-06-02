@@ -2,6 +2,14 @@ DROP SCHEMA IF EXISTS `faculdade` ;
 CREATE SCHEMA IF NOT EXISTS `faculdade` DEFAULT CHARACTER SET utf8 ;
 USE `faculdade` ;
 
+DROP TABLE IF EXISTS `faculdade`.`usuario` ;
+CREATE TABLE IF NOT EXISTS `faculdade`.`usuario` (
+  `codigo` INT(11) NOT NULL AUTO_INCREMENT,
+  `login` VARCHAR(255) NOT NULL,
+  `senha` VARCHAR(32) NOT NULL,
+  PRIMARY KEY (`codigo`));
+
+
 DROP TABLE IF EXISTS `faculdade`.`turma` ;
 CREATE TABLE IF NOT EXISTS `faculdade`.`turma` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -48,3 +56,5 @@ CREATE TABLE IF NOT EXISTS `faculdade`.`professor` (
     REFERENCES `faculdade`.`disciplina` (`codigo`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
+
+INSERT INTO `faculdade`.`usuario`(login, senha) VALUES ("administrador", "123456");
