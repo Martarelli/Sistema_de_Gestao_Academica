@@ -21,6 +21,8 @@ if( empty($_POST['username']) || empty($_POST['password'])) {
     mysqli_close($conn);
     header("Location: dashboard.php");
   } else {
+    session_start();
+    $_SESSION['login_fail'] = true;
     header('Location: index.php');
   }
 
