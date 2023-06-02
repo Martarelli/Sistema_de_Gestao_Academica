@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +17,7 @@
 				<img src="https://clipground.com/images/user-login-icon-png-1.png" width="150" alt="" class="pt-lg-5">
 				<h1 class="text-center pt-2">Sistema Gerencial</h1>
 				<h3 class="text-center">Login</h3>
-				<form class="h-100 w-100 d-flex flex-column justify-content-start pt-4">
+				<form class="h-100 w-100 d-flex flex-column justify-content-start pt-4" action="login.php" method="POST">
 					<div class="form-group mt-3">
 						<label for="username">Usuário:</label>
 						<input type="text" class="form-control" id="username" name="username" required>
