@@ -1,40 +1,31 @@
 <?php
 
+require_once('connection.php');
 $login = $_POST['login'];
 $password = MD5($_POST['password']);
-$connect = mysql_connect('nome_do_servidor','nome_de_usuario','senha');
-$db = mysql_select_db('nome_do_banco_de_dados');
-$query_select = "SELECT login FROM usuarios WHERE login = '$login'";
-$select = mysql_query($query_select,$connect);
-$array = mysql_fetch_array($select);
-$logarray = $array['login'];
 
-  if($login == "" || $login == null){
-    echo"<script language='javascript' type='text/javascript'>
-    alert('O campo login deve ser preenchido');window.location.href='
-    cadastro.html';</script>";
+$db = mysql_select_db('faculdade');
+$mysql_query = "SELECT login FROM usuario WHERE login = '$login'";
+$select = $conn->query($mysql_query);
+$data = mysql_fetch_array($select);
 
-    }else{
-      if($logarray == $login){
+mysqli_close($conn);
 
-        echo"<script language='javascript' type='text/javascript'>
-        alert('Esse login já existe');window.location.href='
-        cadastro.html';</script>";
-        die();
 
-      }else{
-        $query = "INSERT INTO usuarios (login,senha) VALUES ('$login','$senha')";
-        $insert = mysql_query($query,$connect);
+if($login == "" || $login == null)
+{
+  echo"<script language='javascript' type='text/javascript'>
+  alert('O campo login deve ser preenchido');</script>";
 
-        if($insert){
-          echo"<script language='javascript' type='text/javascript'>
-          alert('Usuário cadastrado com sucesso!');window.location.
-          href='login.html'</script>";
-        }else{
-          echo"<script language='javascript' type='text/javascript'>
-          alert('Não foi possível cadastrar esse usuário');window.location
-          .href='cadastro.html'</script>";
-        }
-      }
-    }
+  header("Location: index.php");
+}else{
+  if($data['login'] == $login && password_verify($password, $data['password'])){
+      session_start();
+      $_SESSION['loggedin'] = true;
+      $_SESSION['id'] = $data['id'];
+      $_SESSION['username'] = $username;
+      header("Location: dashboard.php");
+  }
+}
+ 
 ?>
