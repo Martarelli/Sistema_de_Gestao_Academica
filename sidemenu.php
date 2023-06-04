@@ -14,25 +14,25 @@
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a href="#" class="nav-link text-white" aria-current="page">
+        <a href="alunos.php" class="nav-link text-white" aria-current="page">
         <i class="fa-solid fa-user-graduate p-2"></i>
         Alunos
         </a>
       </li>
       <li class="nav-item">
-        <a href="#" class="nav-link text-white">
+        <a href="disciplinas.php" class="nav-link text-white">
         <i class="fa-solid fa-glasses p-2"></i>
         Disciplinas
         </a>
       </li>
       <li class="nav-item">
-        <a href="#" class="nav-link text-white">
+        <a href="professores.php" class="nav-link text-white">
         <i class="fa-solid fa-chalkboard-user p-2"></i>  
         Professores
         </a>
       </li>
       <li class="nav-item">
-        <a href="#" class="nav-link text-white">
+        <a href="turmas.php" class="nav-link text-white">
         <i class="fa-solid fa-people-group p-2"></i>
         Turmas
         </a>
