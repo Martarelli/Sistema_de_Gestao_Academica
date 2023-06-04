@@ -5,7 +5,7 @@ USE `faculdade` ;
 DROP TABLE IF EXISTS `faculdade`.`usuario` ;
 CREATE TABLE IF NOT EXISTS `faculdade`.`usuario` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
-  `login` VARCHAR(255) NOT NULL,
+  `username` VARCHAR(255) NOT NULL,
   `senha` VARCHAR(32) NOT NULL,
   PRIMARY KEY (`codigo`));
 
@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `faculdade`.`disciplina` (
     ON UPDATE NO ACTION
 );
 
-INSERT INTO `faculdade`.`usuario`(login, senha) VALUES ("administrador", "123456");
+INSERT INTO `faculdade`.`usuario`(username, senha) VALUES ("administrador", "123456");
 
 INSERT INTO `faculdade`.`turma`(curso, semestre, periodo) VALUES ("Administração", 2, "Noturno");
 INSERT INTO `faculdade`.`turma`(curso, semestre, periodo) VALUES ("Analise e desenvolvimento de sistemas", 4, "Noturno");
