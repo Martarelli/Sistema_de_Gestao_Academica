@@ -22,7 +22,7 @@ DROP TABLE IF EXISTS `faculdade`.`aluno` ;
 CREATE TABLE IF NOT EXISTS `faculdade`.`aluno` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(45) NOT NULL,
-  `cpf` INT(11) NOT NULL,
+  `cpf` VARCHAR(11) NOT NULL,
   `data_nasc` DATE NOT NULL,
   `turma_codigo` INT(11) NOT NULL,
   PRIMARY KEY (`codigo`, `turma_codigo`),
@@ -61,7 +61,12 @@ CREATE TABLE IF NOT EXISTS `faculdade`.`disciplina` (
 );
 
 INSERT INTO `faculdade`.`usuario`(login, senha) VALUES ("administrador", "123456");
+
 INSERT INTO `faculdade`.`turma`(curso, semestre, periodo) VALUES ("Administração", 2, "Noturno");
 INSERT INTO `faculdade`.`turma`(curso, semestre, periodo) VALUES ("Analise e desenvolvimento de sistemas", 4, "Noturno");
 INSERT INTO `faculdade`.`turma`(curso, semestre, periodo) VALUES ("Engenharia", 1, "Diurno");
+
+INSERT INTO `faculdade`.`aluno`(nome, cpf, data_nasc, turma_codigo) VALUES ("Gabriela", "99988877799", "2003-09-29", 2);
+INSERT INTO `faculdade`.`aluno`(nome, cpf, data_nasc, turma_codigo) VALUES ("Martarelli", "9999999999", "1990-07-11", 3);
+
 
