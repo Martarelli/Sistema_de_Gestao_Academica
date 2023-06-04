@@ -42,9 +42,9 @@ mysqli_close($conn);
         <td style="text-align:center"><?php echo $data['semestre']; ?></td> 
         <td style="text-align:center"><?php echo $data['periodo']; ?></td> 
         <td style="text-align:center">
-          <a href="update-turma.php?id=<?php echo $data['codigo']; ?>">
+          <a href="update-turma.php?codigo=<?php echo $data['codigo']; ?>">
             <button type="button" class="btn btn-primary">Editar</button></a>
-          <a href="delete-turma.php?id=<?php echo $data['codigo']; ?>">
+          <a href="delete-turma.php?codigo=<?php echo $data['codigo']; ?>">
             <button type="button" class="btn btn-danger">Excluir</button></a>
         </td> 
       </tr> 
