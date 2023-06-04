@@ -1,18 +1,19 @@
 <?php
-// Initialize the session
 session_start();
 
-/**
- * Delete data from a Table
- */
+if (!isset($_SESSION['loggedin'])){
+  header('Location: index.php');	
+}
 
-if (isset($_GET['id'])) {
-    $id = $_GET['id'];
+require("sidemenu.php");
+
+if (isset($_GET['codigo'])) {
+    $codigo = $_GET['codigo'];
 
     require_once('connection.php');
 
     // Mysql query to delete record from table
-    $mysql_query = "DELETE FROM contatos WHERE id=$id";
+    $mysql_query = "DELETE FROM turma WHERE codigo=$codigo";
 
     if ($conn->query($mysql_query) === TRUE) {
         $msg = "delete success";
@@ -30,5 +31,5 @@ if (isset($_GET['id'])) {
     $msgerror =  "O ID não foi informado!";
 }
 
-header("Location: contatos.php?msg={$msg}&msgerror={$msgerror}");
+header("Location: turmas.php?msg={$msg}&msgerror={$msgerror}");
 ?>
