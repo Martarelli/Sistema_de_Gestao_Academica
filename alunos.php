@@ -30,7 +30,7 @@ mysqli_close($conn);
         <th scope="col">Nome</th>
         <th scope="col" style="width: 20%;">CPF</th>
         <th scope="col" style="width: 15%;">Data Nascimento</th>
-        <th scope="col" style="width: 25%;">Turma</th>
+        <th scope="col" style="width: 25%;">Curso</th>
         <th scope="col" style="width: 20%;">Ação</th>
       </tr>
     </thead>
