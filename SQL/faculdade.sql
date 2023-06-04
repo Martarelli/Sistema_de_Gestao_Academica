@@ -61,3 +61,7 @@ CREATE TABLE IF NOT EXISTS `faculdade`.`disciplina` (
 );
 
 INSERT INTO `faculdade`.`usuario`(login, senha) VALUES ("administrador", "123456");
+INSERT INTO `faculdade`.`turma`(curso, semestre, periodo) VALUES ("Administração", 2, "Noturno");
+INSERT INTO `faculdade`.`turma`(curso, semestre, periodo) VALUES ("Analise e desenvolvimento de sistemas", 4, "Noturno");
+INSERT INTO `faculdade`.`turma`(curso, semestre, periodo) VALUES ("Engenharia", 1, "Diurno");
+
