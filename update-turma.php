@@ -1,27 +1,23 @@
 <?php
-require("header-inc.php");
+session_start();
 
-// Check if the user is logged in, if not then redirect him to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-	header("location: login.php");
-	exit;
-  }
-  
-/**
- * Update data in a Table
- */
+if (!isset($_SESSION['loggedin'])){
+  header('Location: index.php');	
+}
+
+require("sidemenu.php");
 
 require_once('connection.php');
 
 if (isset($_POST['enviar'])) {
 
-	$id = $_POST['id'];
-	$nome = $_POST['nome'];
-	$email = $_POST['email'];
-	$datanasc = $_POST['datanasc'];
+	$codigo = $_POST['codigo'];
+    $curso = $_POST['curso'];
+	$semestre = $_POST['semestre'];
+	$periodo = $_POST['periodo'];
 
 	// Mysql query to update record in a table
-	$mysql_query = "UPDATE contatos SET nome='{$nome}', email='{$email}', datanasc='{$datanasc}' WHERE id={$id}";
+	$mysql_query = "UPDATE turma SET curso='{$curso}', semestre='{$semestre}', periodo='{$periodo}' WHERE codigo={$codigo}";
 
 	if ($conn->query($mysql_query) === TRUE) {
 		$msg = "update success";
@@ -31,36 +27,47 @@ if (isset($_POST['enviar'])) {
 		$msg = "update error";
 		$msgerror = $conn->error;
 	}
-	header("Location: contatos.php?msg={$msg}&msgerror={$msgerror}");
+	header("Location: turmas.php?msg={$msg}&msgerror={$msgerror}");
 }
 
-if (isset($_GET['id'])) {
-	$id = $_GET['id'];
-	$mysql_query = "SELECT * FROM contatos WHERE id={$id}";
+if (isset($_GET['codigo'])) {
+	$codigo = $_GET['codigo'];
+	$mysql_query = "SELECT * FROM turma WHERE codigo='{$codigo}'";
 	$result = $conn->query($mysql_query);
 	$row = mysqli_fetch_assoc($result);
 }
 
-// Connection Close
 mysqli_close($conn);	
 ?>
-<div class="container">
-	<h2>Contatos</h2>
-  	<p>Atualização do cadastro de contatos.</p>
+<div class="container p-3">
+	<h2>Turmas</h2>
+  	<p>Atualização do cadastro de turmas.</p>
   	<hr>  	
 	<div class="wrapper">
 		<form method="post">
-			<input type="hidden" name="id" value="<?= $row['id']; ?>">
-			<label for="name">&nbsp;Nome</label>
-			<input type="text" name="nome" id="nome" class="form-control" required value="<?= $row['nome']; ?>"><br>
-			<label for="email">&nbsp;E-Mail</label>
-			<input type="text" name="email" id="email" class="form-control"required value="<?= $row['email']; ?>"><br>
-			<label for="datanasc">&nbsp;Data de Nascimento</label>
-			<input type="date" name="datanasc" id="datanasc" class="form-control" 
-												style="width: 200px;" value="<?= $row['datanasc']; ?>"><br>
-			<input type="submit" name="enviar" value="Atualizar" class="btn btn-primary w100">
+			<input type="hidden" name="codigo" value="<?= $row['codigo']; ?>">
+			<label for="curso">&nbsp;Curso</label>
+			<input type="text" name="curso" id="curso" class="form-control" required value="<?= $row['curso']; ?>"><br>
+			<label for="periodo">&nbsp;Periodo</label>
+			<?php 
+				if($row['periodo'] === "Diurno")
+				{?>
+			<select class="form-select" name="periodo">
+				<option selected value="Diurno">Diurno</option>
+				<option value="Noturno">Noturno</option>
+			</select>
+			<?php
+				} else {?>
+			<select class="form-select" name="periodo">
+				<option value="Diurno">Diurno</option>
+				<option selected value="Noturno">Noturno</option>
+			</select>
+				<?php
+				}
+			?><br>
+			<label for="semestre">&nbsp;Semestre</label>
+			<input type="number" name="semestre" id="semestre" class="form-control" value="<?= $row['semestre']; ?>"><br>
+			<input type="submit" name="enviar" value="Atualizar" class="btn btn-dark w100">
 		</form>
 	</div>
 </div>
-
-<?php require("footer-inc.php"); ?>
