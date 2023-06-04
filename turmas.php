@@ -26,7 +26,7 @@ mysqli_close($conn);
   </div>
   <table class="table table-striped table-bordered table-hover">
     <thead>
-      <tr class="table-info" style="text-align:center">
+      <tr class="table-dark" style="text-align:center">
         <th scope="col" style="width: 10%;">Código</th>
         <th scope="col">Curso</th>
         <th scope="col" style="width: 15%;">Semestre</th>
@@ -43,7 +43,7 @@ mysqli_close($conn);
         <td style="text-align:center"><?php echo $data['periodo']; ?></td> 
         <td style="text-align:center">
           <a href="update-turma.php?codigo=<?php echo $data['codigo']; ?>">
-            <button type="button" class="btn btn-primary">Editar</button></a>
+            <button type="button" class="btn btn-dark">Editar</button></a>
           <a href="delete-turma.php?codigo=<?php echo $data['codigo']; ?>">
             <button type="button" class="btn btn-danger">Excluir</button></a>
         </td> 
