@@ -13,7 +13,9 @@ CREATE TABLE IF NOT EXISTS `faculdade`.`usuario` (
 DROP TABLE IF EXISTS `faculdade`.`turma` ;
 CREATE TABLE IF NOT EXISTS `faculdade`.`turma` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
-  `periodo` INT(11) NOT NULL,
+  `curso` VARCHAR(45) NOT NULL,
+  `semestre` INT(11) NOT NULL,
+  `periodo` VARCHAR(30) NOT NULL,
   PRIMARY KEY (`codigo`));
 
 DROP TABLE IF EXISTS `faculdade`.`aluno` ;
