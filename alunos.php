@@ -43,9 +43,9 @@ mysqli_close($conn);
         <td style="text-align:center"><?php echo date('d/m/Y', strtotime($data['data_nasc'])); ?></td>
         <td style="text-align:center"><?php echo $data['curso']; ?></td> 
         <td style="text-align:center">
-          <a href="update-contato.php?id=<?php echo $data['codigo']; ?>">
+          <a href="update-aluno.php?codigo=<?php echo $data['codigo']; ?>">
             <button type="button" class="btn btn-dark">Editar</button></a>
-          <a href="delete-contato.php?id=<?php echo $data['codigo']; ?>">
+          <a href="delete-aluno.php?codigo=<?php echo $data['codigo']; ?>">
             <button type="button" class="btn btn-danger">Excluir</button></a>
         </td> 
       </tr> 
