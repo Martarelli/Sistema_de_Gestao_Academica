@@ -1,26 +1,22 @@
 <?php
-require("header-inc.php");
+session_start();
 
-// Check if the user is logged in, if not then redirect him to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-	header("location: login.php");
-	exit;
+if (!isset($_SESSION['loggedin'])){
+  header('Location: index.php');	
 }
 
-/**
- * Insert data into Table
- */
+require("sidemenu.php");
 
 if (isset($_POST['enviar'])) {
-    $nome = $_POST['nome'];
-	$email = $_POST['email'];
-	$datanasc = $_POST['datanasc'];
+    $curso = $_POST['curso'];
+	$semestre = $_POST['semestre'];
+	$periodo = $_POST['periodo'];
 
 	require_once('connection.php');
 
 	// Mysql query to insert record into table
-	$mysql_query = "INSERT INTO contatos (nome, email, datanasc) 
-								VALUES ('{$nome}', '{$email}', '{$datanasc}')";
+	$mysql_query = "INSERT INTO turma (curso, semestre, periodo) 
+								VALUES ('{$curso}', '{$semestre}', '{$periodo}')";
 	
 	$result = $conn->query($mysql_query);
 
@@ -36,25 +32,27 @@ if (isset($_POST['enviar'])) {
 	//Connection Close
 	mysqli_close($conn);
 
-	header("Location: contatos.php?msg={$msg}&msgerror={$msgerror}");
+	header("Location: turmas.php?msg={$msg}&msgerror={$msgerror}");
 }
 ?>
 
-<div class="container">
+<div class="container p-3">
 	<h2>Contatos</h2>
   	<p>Cadastro de contatos.</p>
   	<hr>  	
 	<div class="wrapper">
 		<form method="post">
-			<label for="name">&nbsp;Nome</label>
-			<input type="text" name="nome" id="nome" class="form-control" required><br>
-			<label for="email">&nbsp;E-Mail</label>
-			<input type="text" name="email" id="email" class="form-control"required><br>
-			<label for="datanasc">&nbsp;Data de Nascimento</label>
-			<input type="date" name="datanasc" id="datanasc" class="form-control" style="width: 200px;"><br>
-			<input type="submit" name="enviar" value="Inserir" class="btn btn-primary w100">
+			<label for="curso">&nbsp;Curso</label>
+			<input type="text" name="curso" id="curso" class="form-control" required><br>
+			<label for="semestre">&nbsp;Semestre</label>
+			<input type="number" name="semestre" id="semestre" class="form-control"required><br>
+			<label for="semestre">&nbsp;Periodo</label>
+			<select class="form-select" name="periodo">
+				<option selected>Selecione um periodo...</option>
+				<option value="Diurno">Diurno</option>
+				<option value="Noturno">Noturno</option>
+			</select>
+			<input type="submit" name="enviar" value="Inserir" class="btn btn-dark w100 mt-3">
 		</form>
 	</div>
 </div>
-
-<?php require("footer-inc.php"); ?>
