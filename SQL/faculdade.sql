@@ -69,4 +69,6 @@ INSERT INTO `faculdade`.`turma`(curso, semestre, periodo) VALUES ("Engenharia", 
 INSERT INTO `faculdade`.`aluno`(nome, cpf, data_nasc, turma_codigo) VALUES ("Gabriela", "99988877799", "2003-09-29", 2);
 INSERT INTO `faculdade`.`aluno`(nome, cpf, data_nasc, turma_codigo) VALUES ("Martarelli", "9999999999", "1990-07-11", 3);
 
+INSERT INTO `faculdade`.`professor`(nome, cpf, data_nasc) VALUES ("João", "99988877799", "2002-05-27");
+INSERT INTO `faculdade`.`professor`(nome, cpf, data_nasc) VALUES ("Ana", "9999999999", "1996-03-13");
 
