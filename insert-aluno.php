@@ -38,8 +38,8 @@ if (isset($_POST['enviar'])) {
 ?>
 
 <div class="container p-3">
-	<h2>Contatos</h2>
-  	<p>Cadastro de contatos.</p>
+	<h2>Alunos</h2>
+  	<p>Cadastro de aluno.</p>
   	<hr>  	
 	<div class="wrapper">
 		<form method="post">
