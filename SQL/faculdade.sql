@@ -72,3 +72,6 @@ INSERT INTO `faculdade`.`aluno`(nome, cpf, data_nasc, turma_codigo) VALUES ("Mar
 INSERT INTO `faculdade`.`professor`(nome, cpf, data_nasc) VALUES ("João", "99988877799", "2002-05-27");
 INSERT INTO `faculdade`.`professor`(nome, cpf, data_nasc) VALUES ("Ana", "9999999999", "1996-03-13");
 
+INSERT INTO `faculdade`.`disciplina`(nome, descricao, professor_codigo, turma_codigo) VALUES ("Linguagem de Programação IV", "Linguagem de programação web utilizando php", 1, 2 );
+
+INSERT INTO `faculdade`.`disciplina`(nome, descricao, professor_codigo, turma_codigo) VALUES ("Programação Orientada a Objetos", "Programação Orientada a Objetos", 2, 1);
