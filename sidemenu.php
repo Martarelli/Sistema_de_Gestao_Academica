@@ -7,9 +7,9 @@
 </head>
 <body class="w-100 d-flex vh-100">
 <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
-    <a href="/Sistema_de_Gestao_Academica/dashboard.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+    <a href="/Sistema_de_Gestao_Academica/dashboard.php" class="d-flex w-100 text-center align-items-center justify-content-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
       <i class="fa-solid fa-book fa-bounce"></i>
-      <span class="fs-4 text-center p-0 m-0">Sistema de Gestão Academica</span>
+      <span class="fs-4 text-center p-0 m-3">SGA</span>
     </a>
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
