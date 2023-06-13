@@ -26,11 +26,8 @@ mysqli_close($conn);
   <table class="table table-striped table-bordered table-hover">
     <thead>
       <tr class="table-dark" style="text-align:center">
-        <th scope="col" style="width: 5%;">Código</th>
+        <th scope="col" style="width: 10%;">Código</th>
         <th scope="col">Nome</th>
-        <th scope="col" style="width: 20%;">CPF</th>
-        <th scope="col" style="width: 15%;">Data Nascimento</th>
-        <th scope="col" style="width: 25%;">Curso</th>
         <th scope="col" style="width: 20%;">Ação</th>
       </tr>
     </thead>
@@ -39,14 +36,9 @@ mysqli_close($conn);
       <tr> 
         <th scope="row" style="text-align:center"><?php echo $data['codigo']; ?></th>
         <td style="text-align:center"><?php echo $data['nome']; ?></td> 
-        <td style="text-align:center"><?php echo $data['cpf']; ?></td> 
-        <td style="text-align:center"><?php echo date('d/m/Y', strtotime($data['data_nasc'])); ?></td>
-        <td style="text-align:center"><?php echo $data['curso']; ?></td> 
         <td style="text-align:center">
-          <a href="update-aluno.php?codigo=<?php echo $data['codigo']; ?>">
-            <button type="button" class="btn btn-dark">Editar</button></a>
-          <a href="delete-aluno.php?codigo=<?php echo $data['codigo']; ?>">
-            <button type="button" class="btn btn-danger">Excluir</button></a>
+          <a href="details-aluno.php?codigo=<?php echo $data['codigo']; ?>">
+            <button type="button" class="btn btn-dark">Detalhes</button></a>
         </td> 
       </tr> 
       <?php } ?>       
