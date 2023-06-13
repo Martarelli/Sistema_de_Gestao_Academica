@@ -31,8 +31,8 @@ CREATE TABLE IF NOT EXISTS `faculdade`.`aluno` (
   CONSTRAINT `fk_aluno_turma`
     FOREIGN KEY (`turma_codigo`)
     REFERENCES `faculdade`.`turma` (`codigo`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION);
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);
 
 DROP TABLE IF EXISTS `faculdade`.`professor` ;
 CREATE TABLE IF NOT EXISTS `faculdade`.`professor` (
@@ -53,13 +53,13 @@ CREATE TABLE IF NOT EXISTS `faculdade`.`disciplina` (
   CONSTRAINT `fk_disciplina_professor`
     FOREIGN KEY (`professor_codigo`)
     REFERENCES `faculdade`.`professor` (`codigo`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   CONSTRAINT `fk_disciplina_turma`
     FOREIGN KEY (`turma_codigo`)
     REFERENCES `faculdade`.`turma` (`codigo`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
 );
 
 INSERT INTO `faculdade`.`usuario`(username, senha) VALUES ("administrador", "123456");
