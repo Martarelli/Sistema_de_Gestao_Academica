@@ -14,25 +14,25 @@
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a href="alunos.php" class="nav-link text-white" aria-current="page">
+        <a href="alunos.php?filtro=&valor=&filtrar=Filtrar" class="nav-link text-white" aria-current="page">
         <i class="fa-solid fa-user-graduate p-2"></i>
         Alunos
         </a>
       </li>
       <li class="nav-item">
-        <a href="disciplinas.php" class="nav-link text-white">
+        <a href="disciplinas.php?filtro=&valor=&filtrar=Filtrar" class="nav-link text-white">
         <i class="fa-solid fa-glasses p-2"></i>
         Disciplinas
         </a>
       </li>
       <li class="nav-item">
-        <a href="professores.php" class="nav-link text-white">
+        <a href="professores.php?filtro=&valor=&filtrar=Filtrar" class="nav-link text-white">
         <i class="fa-solid fa-chalkboard-user p-2"></i>  
         Professores
         </a>
       </li>
       <li class="nav-item">
-        <a href="turmas.php" class="nav-link text-white">
+        <a href="turmas.php?filtro=&valor=&filtrar=Filtrar" class="nav-link text-white">
         <i class="fa-solid fa-people-group p-2"></i>
         Turmas
         </a>
@@ -40,7 +40,7 @@
     </ul>
     <hr>
     <div class="dropdown">
-      <a class="text-decoration-none text-white" href="users.php">
+      <a class="text-decoration-none text-white" href="users.php?filtro=&valor=&filtrar=Filtrar">
         <i class="fa-solid fa-circle-user p-2"></i>
         <?php echo "<strong>".strtoupper($_SESSION['username'])."</strong>" ?>
       </a>
